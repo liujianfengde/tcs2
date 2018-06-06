@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">	
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-1.8.3.min.js"></script>
+	</head>
+        <style>
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+			}
+			.mui-control-content {
+				background-color: white;
+				min-height: 215px;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.mui-slider-group{
+				height: 100%;
+			}
+			.mui-content{
+		      height: 100%;
+			}
+			.mui-slider-group{
+				min-height:300px;!important
+			}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+				border-bottom: none;
+				background: #efeff4;
+				min-height: 300px;
+				border-bottom:none;
+			}
+        </style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">商品列表</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile" id="a1">
+				水果蔬菜
+			</a>
+					<a class="mui-control-item" href="#item2mobile" id="a2">
+				日用品
+			</a>
+					<a class="mui-control-item" href="#item3mobile" id="a3">
+				零食
+			</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                        <ul class="mui-table-view" id="List1">
+						</ul>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<ul class="mui-table-view" id="List2">
+						</ul>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<ul class="mui-table-view" id="List3">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+ </body>
+</html>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			var width= window.screen.availWidth;
+			mui.plusReady(function(){
+				window.addEventListener('refresh', function(e) { 
+					$("#a1").addClass("mui-active")
+					$("#sliderProgressBar").css("transform",'translate3d(0px,0px,0px')
+					$(".mui-slider-group").css("transform",'translate3d(0px,0px,0px')
+				})
+				window.addEventListener('refresh2', function(e) { 
+					$("#a2").addClass("mui-active")
+					$("#sliderProgressBar").css("transform",'translate3d('+(width/3)+'px,0px,0px')
+					$(".mui-slider-group").css("transform",'translate3d('+(-width)+'px,0px,0px')
+				})
+				window.addEventListener('refresh3', function(e) { 
+					$("#a3").addClass("mui-active")
+					$("#sliderProgressBar").css("transform",'translate3d('+(width/3)*2+'px,0px,0px')
+					$(".mui-slider-group").css("transform",'translate3d('+(-width)*2+'px,0px,0px')
+				})
+				var table = document.getElementById("List1");
+			mui.ajax('http://rufeng2.duapp.com/shuju5.php?pstate=1', {
+				data: {
+				},
+				async: false,
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				timeout: 10000, //超时时间设置为10秒；
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+					if(data.status=="y"){
+						for(var i = 0; i < data.list.length; i++) {
+						
+							var li = document.createElement('li');
+							li.className = "mui-table-view-cell mui-media";
+							li.innerHTML ='<a href="" id="' + data.list[i].pid + '">' +
+							'<img  class="mui-media-object mui-pull-left" src="http://rufeng2.duapp.com/'+data.list[i].pimg+'" />'+
+							'<div class="mui-media-body mui-ellipsis">'+data.list[i].ptitle+'&nbsp;'+data.list[i].pdes+
+								'<p class="mui-ellipsis" style="color:red">'+'￥'+data.list[i].pprice+'</p></div></a>'
+							table.appendChild(li);						
+						}
+					}else{
+						mui.toast(data.info);
+					}
+					
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					mui.toast("网络不给力，请检查网络设置。");
+				}
+			});
+			var table = document.getElementById("List2");
+			mui.ajax('http://rufeng2.duapp.com/shuju5.php?pstate=2', {
+				data: {
+				},
+				async: false,
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				timeout: 10000, //超时时间设置为10秒；
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+					if(data.status=="y"){
+						for(var i = 0; i < data.list.length; i++) {
+						
+							var li = document.createElement('li');
+							li.className = "mui-table-view-cell mui-media";
+							li.innerHTML ='<a href="" id="' + data.list[i].pid + '">' +
+							'<img  class="mui-media-object mui-pull-left" src="http://rufeng2.duapp.com/'+data.list[i].pimg+'" />'+
+							'<div class="mui-media-body mui-ellipsis">'+data.list[i].ptitle+'&nbsp;'+data.list[i].pdes+
+								'<p class="mui-ellipsis" style="color:red">'+'￥'+data.list[i].pprice+'</p></div></a>'
+							table.appendChild(li);						
+						}
+					}else{
+						mui.toast(data.info);
+					}
+					
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					mui.toast("网络不给力，请检查网络设置。");
+				}
+			});
+			var table = document.getElementById("List3");
+			mui.ajax('http://rufeng2.duapp.com/shuju5.php?pstate=3', {
+				data: {
+				},
+				async: false,
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				timeout: 10000, //超时时间设置为10秒；
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+					if(data.status=="y"){
+						for(var i = 0; i < data.list.length; i++) {
+						
+							var li = document.createElement('li');
+							li.className = "mui-table-view-cell mui-media";
+							li.innerHTML ='<a href="" id="' + data.list[i].pid + '">' +
+							'<img  class="mui-media-object mui-pull-left" src="http://rufeng2.duapp.com/'+data.list[i].pimg+'" />'+
+							'<div class="mui-media-body mui-ellipsis">'+data.list[i].ptitle+'&nbsp;'+data.list[i].pdes+
+								'<p class="mui-ellipsis" style="color:red">'+'￥'+data.list[i].pprice+'</p></div></a>'
+							table.appendChild(li);						
+						}
+					}else{
+						mui.toast(data.info);
+					}
+					
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					mui.toast("网络不给力，请检查网络设置。");
+				}
+			});
+			mui(".mui-table-view-cell").on("tap","a",function(e){
+			var pid = this.getAttribute("id");
+			e.preventDefault();
+			mui.openWindow({
+				url:"html/detail.html",
+				id:"detail",
+				show:{
+					duration:300
+				},
+				extras:{
+					pid:pid
+				},
+				waiting:{
+			      	autoShow:false,//自动显示等待框，默认为true			      	
+			    }
+			});
+			
+			});
+			})
+			
+		</script>

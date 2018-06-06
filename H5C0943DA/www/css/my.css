@@ -1,0 +1,285 @@
+.header{
+	width: 100%;
+	height: 174px;
+	background-color: #008df3;
+	position: relative;
+	border-radius: 0 0 100% 100%;
+}
+
+.header .setting {
+	position: absolute;
+	background: url(../img/install.png) no-repeat;
+	background-size: 100% 100%;
+	width: 24px;
+	height: 24px;
+	right: 10px;
+	top: 10px;
+}
+
+.header h1.mui-title {
+	margin: 0 auto;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+}
+
+
+/*信息*/
+.theme{
+	background: #008DF3;
+	width: 100%;
+}
+.theme .info{
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+}
+.info .specific{
+	width: 90%;
+	margin: 0 5%;
+	color: #FFFFFF;
+	position: relative;
+	overflow: hidden;
+}
+
+ .info .touxiang{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	margin-right: 20px;
+	margin: 11px auto;
+}
+.info .touxiang img{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+#nickname p{
+	color: #333333;
+	text-align: center;
+}
+.info .edit_name{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 45px;
+}
+.info .edit_name img{
+	width: 100%;
+	margin-top: 11px;
+}
+
+.theme .info .txt_btn{
+	width: 100%;
+	margin-top: 15px;
+}
+
+
+/*登录*/
+
+.theme .info .txt_btn a{
+	width: 100%;
+	color: #FFFFFF;
+}
+
+.theme .info .txt_btn h4{
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin-bottom: 9px;
+	width: 100%;
+	text-align: center;
+}
+.theme .info .txt_btn .btn{
+	height: 22px;
+	float: left;
+}
+.theme .info .txt_btn .btn a{
+	float: left;
+	width: 70px;
+	margin-right: 15px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.theme .info .txt_btn .btn a:last-child{
+	margin-right: 0;
+}
+
+.theme .info .txt_btn .btn a img{
+	width: 100%;
+	height: 22px;
+	border: 0;
+}
+
+
+
+
+
+.theme .oprayion{
+	padding: 14px 2%;
+	background: #FFFFFF;
+	border-bottom: 1px solid #008DF3;
+}
+.theme .oprayion .model{
+	width: 100%;
+	height: 30px;
+}
+
+.theme .oprayion .model>div{
+	float: left;
+	width: 33.33%;
+	height: 30px;
+	text-align: center;
+	border-right: 1px dashed #008DF3;
+}
+.theme .oprayion .model>div:last-child{
+	border-right: 0;
+}
+.theme .oprayion .model>div img{
+	width: 30px;
+	height: 30px;
+}
+
+
+
+/*买家模块*/
+
+.buyers{
+	width: 90%;
+	margin: 5% auto;
+}
+.buyers .buyers_title{
+	width: 100%;
+	height: 46px;
+}
+.buyers .buyers_title img{
+	height: 24px;
+	width: 120px;
+	margin-top: 12px;
+	margin-left: 2px;
+}
+
+.buyers .mui-table-view{
+	width: 100%;
+	margin-top: 50px;
+	overflow: hidden;
+	margin-left: 0;
+	
+}
+.buyers .mui-table-view:before{
+	/*height: 1px;*/
+}
+.buyers .mui-table-view-cell{
+	width: 50%;
+	overflow: hidden;
+	float: left;
+	font-size: 12px;
+}
+.buyers .mui-table-view-cell a{
+	width: 100%;
+	/*height: 22px;*/
+	font-size: 14px;
+	line-height: 22px;
+	text-align: center;
+}
+.mui-navigate-right:after, .mui-push-right:after{
+	content: "";
+}
+.buyers .mui-table-view-cell a img{
+	height: 40%;
+	width: 40%;
+	margin: 10% auto;
+}
+.buyers .mui-table-view a>.mui-pull-left {
+    margin-right: 15px;
+}
+.mui-navigate-right:after{
+	color: #008DF3;
+}
+.mui-table-view-cell:last-child:after, .mui-table-view-cell:before{
+	height: 0px;
+}
+
+
+
+/*新的*/
+.mui-card{
+	width: 80%;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 10px;
+}
+.bgimg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	z-index: 7;
+}
+.bgimg img{
+	width: 100%;
+}
+.info{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 20px auto;
+	z-index: 9;
+}
+.maskwhite{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+	opacity: 0.5;
+	z-index: 1;
+}
+.mui-card-content{
+	width: 100%;
+	height: 158px;	
+	position: relative;
+	background-color: rgba(255,255,255,0.3);
+}
+.cont-bot{
+	width:100%;
+	height: 44px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	background: rgba(255,255,255,0.8);
+	z-index: 9;
+}
+.cont-bot a{
+	height: 16px;
+	margin-top: 14px;
+	color: #000000;
+	border-right: 1px solid #3688ff;
+	line-height: 16px;
+	font-weight: bold;
+}
+.cont-bot a:last-child{
+	border-right: 0;
+}
+.mui-table-view:before, .mui-table-view:after{
+	height: 1px;
+}
+.mui-table-view .mui-media, .mui-table-view .mui-media-body{
+	font-size: 20px;
+}
+ul.mui-table-view::after{
+	height: 0;
+}
+li#mycomment.mui-table-view-cell::after{
+	height: 0;
+}
+
+

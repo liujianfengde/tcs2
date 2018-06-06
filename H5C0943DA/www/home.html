@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" href="css/common.css" />
+	    <link rel="stylesheet" href="css/home3.css" />
+        <link href="css/mui.min.css" rel="stylesheet"/>
+		<script src="js/mui.min.js"></script>
+	    
+	    <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	    <script type="text/javascript" src="js/back_top.js" ></script>
+		<script src="js/mui.min.js"></script>
+	    
+	</head>
+	<style type="text/css">
+		.mui-content .mui-input-row .mui-input-speech~.mui-icon-speech{
+			top: 10px;
+		}
+		.mui-content  input[type=search]{
+			padding-right: 0;
+		}
+		#getsearch{
+			height: 30px;
+			margin:10px auto;
+            margin-left: 10%;		
+		}
+		.mui-media::after{
+			height: 0;
+		}
+		#tabbar .mui-content .main img{
+			margin-left: 20%;
+			margin-top:5%;
+			width: 60%;
+			height:60%;
+		}
+		.mui-content .mui-slider{
+			height: 150px;
+		}
+		.mui-content .mui-slider .mui-slider-loop{
+			height: 100%;
+		}
+		.mui-slider-item img{
+			height: 100%;
+		}
+	</style>
+	<body id="tabbar">	    
+	    <div class="mui-content">
+    		<div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop" id="banner"></div>
+				<div class="mui-slider-indicator" id="dian"></div>  
+         	</div>
+         	
+			<div class="main">
+				<div class="main-top">
+					<span class="mui-icon mui-icon mui-icon-starhalf"> &nbsp;猜你喜欢</span>
+				</div>
+				<ul class="mui-table-view" id="List">
+				    
+				</ul>
+			</div>
+			
+
+
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	
+</html>
+<script>
+	var table = document.getElementById("List");
+		mui.ajax('http://58.87.69.114/zhineng/shuju1.php', {
+			data: {
+			
+			},
+			async: false,
+			dataType: 'json', //服务器返回json格式数据
+			type: 'post', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒；
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: function(data) {
+				if(data.status=="y"){
+					for(var i = 0; i < data.list.length; i++) {
+					
+						var li = document.createElement('li');
+						li.className = "mui-table-view-cell mui-media";
+						li.innerHTML ='<a href="" id="' + data.list[i].pid + '">' +
+						'<img  class="mui-media-object mui-pull-left" src="http:///'+data.list[i].pimg+'" />'+
+						'<div class="mui-media-body mui-ellipsis">'+data.list[i].gname+'&nbsp;'+data.list[i].gdescribe+
+							'<p class="mui-ellipsis">'+'￥'+data.list[i].gprice+'</p></div></a>'
+						table.appendChild(li);						
+					}
+				}else{
+					mui.toast(data.info);
+				}
+				
+			},
+			error: function(xhr, type, errorThrown) {
+				//异常处理；
+				mui.toast("网络不给力，请检查网络设置。");
+			}
+		});
+		mui(".mui-table-view-cell").on("tap","a",function(e){
+			var gid = this.getAttribute("id");
+			e.preventDefault();
+			mui.openWindow({
+				url:"html/detail.html",
+				id:"detail",
+				show:{
+					duration:300
+				},
+				extras:{
+					gid:gid
+				},
+				waiting:{
+			      	autoShow:false,//自动显示等待框，默认为true			      	
+			    }
+			});
+			
+		});
+		var menu_html = "";
+		var list_html = "";
+		
+		mui.ajax('http://58.87.69.114/zhineng/shuju2.php', {
+			data: {},
+			async: false,
+			dataType: 'json', //服务器返回json格式数据
+			type: 'post', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒；
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: function(data) {
+				if(data.status=="y"){
+//					mui.toast(data.info);
+					
+					for(var i = 0; i < data.list.length; i++) {
+					
+						if(i == 0) {
+							menu_html += '<div class="mui-slider-item mui-slider-item-duplicate">';
+							menu_html += '<a id="'+data.list[data.list.length-1].gid+'" href="#"><img src="http://58.8769.114/zhineng/public/uploads/'+data.list[data.list.length-1].gimage+'" /></a>';
+							menu_html += '</div>';
+							
+							menu_html += '<div class="mui-slider-item">';
+							menu_html += '<a id="'+data.list[i].pid+'" href="html/banner_detail.html"><img src="http:///'+data.list[i].gimage+'" /></a>';
+							menu_html += '</div>';
+							
+							list_html += '<div class="mui-indicator mui-active"></div>';
+						}else if(i == data.list.length-1){
+							menu_html += '<div class="mui-slider-item">';
+							menu_html += '<a id="'+data.list[i].pid+'" href="html/banner_detail.html"><img src="http:///'+data.list[i].gimage+'" /></a>';
+							menu_html += '</div>';
+							
+							menu_html += '<div class="mui-slider-item mui-slider-item-duplicate">';
+							menu_html += '<a id="'+data.list[0].gid+'" href="#"><img src="http://58.8769.114/zhineng/public/uploads/'+data.list[0].gimage+'" /></a>';
+							menu_html += '</div>';
+							
+							list_html += '<div class="mui-indicator"></div>';
+						}else {
+							
+							menu_html += '<div class="mui-slider-item">';
+							menu_html += '<a id="'+data.list[i].gid+'" href="html/banner_detail.html"><img src="http://58.8769.114/zhineng/public/uploads/'+data.list[i].gimage+'" /></a>';
+							menu_html += '</div>';
+							
+							list_html += '<div class="mui-indicator"></div>';
+						}
+	//					
+					}
+	
+					document.getElementById("banner").innerHTML = menu_html;
+					document.getElementById("dian").innerHTML = list_html;
+					
+					var gallery = mui('.mui-slider');
+					gallery.slider({
+						interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+					});
+					
+					mui("#banner").on("tap","a",function(e){
+						var gid = this.getAttribute("id");
+						mui.openWindow({
+							url:"html/detail2.html",
+							id:"detail2",
+							show:{
+								duration:300
+							},
+							extras:{
+						      	gid:gid
+						   },
+						   waiting:{
+						      	autoShow:false,//自动显示等待框，默认为true			      	
+						    }
+						});
+					});
+					
+				}else{
+					mui.toast(data.info);
+				}
+								
+			},
+			error: function(xhr, type, errorThrown) {
+				//异常处理；
+				mui.toast("网络不给力，请检查网络设置。");
+			}
+		});
+		
+					
+			
+</script>

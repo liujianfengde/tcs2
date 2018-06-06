@@ -1,0 +1,148 @@
+html,body{
+	background: rgb(227, 227, 227);
+}
+
+.follow_model{
+	width: 100%;
+    padding: 15px 0 5px;
+    background: #FFFFFF;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+}
+#follow_new{
+	border-bottom: 0;
+}
+.follow_model .title{
+	width: 100%;
+	overflow: hidden;
+}
+
+.follow_model .title .name{
+	width: 30%;
+    margin-left: 4%;
+}
+.follow_model .title .name img{
+	width: 100%;
+}
+
+.follow_model .title .more{
+	width: 21%;
+	margin-top: 1%;
+	margin-right: 4%;
+	display: none;
+}
+.follow_model .title .more a img{
+	width: 100%;
+}
+
+#follow_icon .mui-table-view:before,.mui-table-view:after{
+	height: 0 !important;
+}
+
+#follow_icon .mui-table-view .mui-table-view-cell:first-child{
+	margin: 0 2% 10px 2%;
+}
+#follow_icon .mui-table-view .mui-table-view-cell{
+	width: 96%;
+	overflow: hidden;
+	margin: 10px 2%;
+	border: 1px solid #f5f5f5;
+	border-radius: 7px;
+	box-shadow: 1px 1px 0 0 #F5F5F5;
+	padding-right: 0;
+}
+
+#follow_icon .mui-table-view-cell .title_1{
+	font-size: 14px;
+	position: relative;
+	line-height: 20px;
+}
+#follow_icon .mui-table-view-cell .title_1 img{
+	position: absolute;
+	width: 103px;
+	bottom: -5px;
+	right: 0;
+}
+
+
+#follow_icon .mui-table-view-cell .body{
+	font-size: 12px;
+	line-height: 20px;
+	margin: 10px 0;
+}
+#follow_icon .mui-table-view-cell .time{
+	text-align: right;
+	height: 12px;
+	font-size: 12px;
+	margin-top: 15px;
+}
+#follow_icon .mui-table-view-cell .time img{
+	width: 12px;
+	height: 12px;
+	float: right;
+}
+#follow_icon .mui-table-view-cell .time span{
+	height: 12px;
+	line-height: 12px;
+	float: right;
+	margin-left: 5px;
+}
+
+
+
+#follow_new ul:before,ul:after{
+	background-color: #FFFFFF;
+}
+
+#follow_new ul{
+	padding: 0 2%;
+}
+#follow_new ul li{
+	border: 1px solid #EEEEEE;
+	margin-bottom: 2%;
+	border-radius: 7px;
+	padding: 11px 10px;
+}
+
+#follow_new ul li .li_con_top{
+	width: 100%;
+	overflow: hidden;
+}
+
+#follow_new ul h5.titile-dt{
+	width: 100%;
+}
+#follow_new ul li:after{
+	background-color: #FFFFFF;
+}
+
+#follow_new ul:after,#tabbar-with-chat ul:before{
+	background: none;
+}
+
+#follow_new ul h5{
+	width: 100%;
+	font-weight: bold;
+	color: #000000;
+	float: left;
+	
+}
+#follow_new ul p{
+	color: #2D2D2D;
+	margin-bottom: 0;
+}
+
+.mui-table-view-cell:after{
+	height: 0px;
+}
+		
+
+h1, h2, h3, h4, h5, h6{
+	line-height: initial;
+}
+
+
+
+.mui-table-view-cell>a:not(.mui-btn).mui-active{
+	background: #FFFFFF;
+}

@@ -1,0 +1,108 @@
+/*注册页面的样式*/
+
+
+html,body{
+	font-size: 14px;
+	height: 100%;
+	overflow: hidden;
+	background: url(../img/beijingtu.png) no-repeat;
+	background-size: 100% 100%;
+}
+input{
+	font-size: 14px;
+}
+.clear:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.mui-content{
+	height: 100%;
+	background: transparent !important; 
+}
+.mui-content .login_logo {
+	width: 100%;
+	height: 40px;
+	margin: 43px auto;
+	text-align: center;
+	font-size:30px;	
+}
+.mui-content .input {
+	width: 100%;
+	/*margin-bottom: 15px;*/
+}
+.mui-content .input form {
+	width: 100%;
+	margin: 0 auto;
+}
+.mui-content .mui-input-group:before,
+.mui-content .mui-input-group:after {
+	background-color: #FFFFFF;
+}
+.mui-content .mui-input-group .mui-input-row:after {
+	left: 50px;
+	background: #E3E3E3;
+}
+.mui-content .input form .mui-input-row {
+	margin-bottom: 15px;
+	/*background: #f9f9f9;*/
+	height: 44px;
+}
+.mui-content .input form .mui-input-row:last-child {
+	margin-bottom: 0;
+}
+.mui-content .input form .mui-input-row .login_icon {
+	width: 50px;
+	float: left;
+	height: 44px;
+}
+.mui-content .input form .mui-input-row .login_icon img {
+	width: 36px;
+	height: 38px;
+	margin: 3px 7px;
+}
+.mui-content .input form .mui-input-row input {
+	float: left;
+	width: 80%;
+	overflow: hidden;
+	padding: 22px 8px;
+	border: none;	
+}
+.mui-input-row2{
+	margin-top:4px
+}
+.mui-content .pass_register {
+	height: 30px;
+	width: 84%;
+	margin: 0 auto;
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+.mui-input-row label{
+   position:absolute;
+   z-index: 999;
+   left:60%;
+   top:3px;
+   width: 55%;
+
+}
+#login-form .sign{
+	width: 60%;	
+	background-size: 100% 100%;
+	height: 34px;
+	margin: 26px auto;
+	border: 0;
+	outline: none;
+	color: #333;
+	font-size: 13px;
+	border-radius: 50px;
+	margin-bottom: 15px;
+	background: #ccc;
+	line-height:25px;
+	text-align:center;
+	color: #fff;
+	display: block;
+}
+#login-form .active2{
+	background: #008DF3;
+}

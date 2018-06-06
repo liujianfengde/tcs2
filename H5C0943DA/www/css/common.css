@@ -1,0 +1,342 @@
+/*公共样式*/
+.mui-table-view-cell>a:not(.mui-btn).mui-active{
+		background: #FFFFFF;
+	}
+.clear:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+
+.mui-bar-tab .mui-tab-item.mui-active {
+	color: #205eff;
+}
+
+
+#tabbar,#tabbar-with-chat,#tabbar-with-map{
+	background: #FFFFFF;
+}
+
+body,html {
+	background: #FFFFFF;
+}
+.mui-content{
+ 	background: #FFFFFF !important;
+}
+
+header {
+	/*background: url(../img/title.png) no-repeat;*/
+	background: #008df3;
+	background-size: 100% 100%;
+}
+header img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 44px;
+}
+
+header.mui-bar-nav {
+	box-shadow: 0 0px 0px #ccc;
+}
+
+header.mui-bar {
+	background-color: #008df3;
+}
+
+header.mui-bar h1.mui-title {
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	right: 70px;
+	left: 70px;
+	
+}
+
+header .nav_bg {
+	width: 70px;
+	color: #FFFFFF;
+	overflow: hidden;
+}
+
+header .nav_share {
+	background: url(../img/sharedetail.png) no-repeat;
+	background-size: 100% 100%;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 5px;
+	top: 2px;
+}
+
+header a.edit{
+	width: 35px;
+	height: 44px;
+	line-height: 44px;
+	color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+
+#goTopBtn{
+	position: fixed;
+	line-height: 36px;
+	width: 36px;
+	height: 36px;
+	bottom: 35px;
+	/*right: 16px;*/
+	cursor: pointer;
+	background: url(../img/back_top.png) no-repeat;
+	background-size: 100% 100%;
+	display: none;
+	z-index: 999;
+}
+
+
+/*首页/发现楼盘项目*/
+.mui-table-view .mui-table-view-cell>a:not(.mui-btn){
+	margin: 0;
+	padding: 0;
+    white-space: normal;
+}
+
+.mui-table-view{
+	width: 96%;
+	margin: 0 2%;
+}
+
+.mui-table-view:before,.mui-table-view:after{
+	height: 0;
+}
+
+.mui-table-view .mui-table-view-cell{
+	padding: 11px 0;
+}
+
+.mui-table-view .mui-table-view-cell:after{
+	left: 0;
+}
+
+
+.mui-table-view a>.mui-pull-left {
+    margin-right: 10px;
+}
+
+.mui-table-view .imgsize{
+	width: 27%;
+}
+.mui-table-view h4{
+	font-size: 13px;
+	line-height: 16px;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	color: #2A2A2A;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.mui-table-view .h5{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-size: 12px;
+	overflow: hidden;
+	line-height: 14px;
+}
+.mui-table-view .h5 .h5_title{
+	color: #2A2A2A;
+	width: 26%;
+}
+.mui-table-view .h5 .h5_con{
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	width: 74%;
+	color: #8f8f94;
+}
+.mui-table-view .jiage{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-size: 12px;
+	overflow: hidden;
+	line-height: 14px;
+}
+.mui-table-view .jiage .h5_title{
+	color: #2A2A2A;
+	width: 26%;
+}
+.mui-table-view .jiage .h5_con{
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	width: 74%;
+	color: #008DF3;
+}
+
+.mui-table-view .yushou{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-size: 12px;
+	line-height: 14px;
+	overflow: hidden;
+}
+
+/*.mui-table-view a{
+	position: relative;
+}*/
+
+.mui-table-view .developer{
+	font-size: 12px;
+	line-height: 12px;
+	margin-top: 10px;
+	/*overflow: hidden;*/
+	text-align: right;
+	/*position: absolute;
+	bottom: 0;
+	right: 0;*/
+}
+/*搜索框开始*/
+.mui-bar-nav.mui-bar .mui-icon{
+	padding-left: 5px;
+}
+.mui-input-row .mui-input-speech~.mui-icon-speech {
+    color: #008DF3;
+}
+
+.mui-search.mui-active:before {
+    left: 7px;
+}
+.mui-search input[type=search]{
+	padding-left: 35px;
+}
+.mui-bar input[type=search] {
+    height: 32px;
+    color: #999;
+    font-size: 15px;
+    padding-left: 34px;
+    background-color: #FFFFFF;
+}
+header .mui-input-row:last-child {
+    width: 82%;
+    margin-left: 60px;
+    background: transparent;
+}
+header .mui-input-row .mui-input-speech~.mui-icon-speech {
+    color: #008DF3;
+}
+.mui-bar .mui-input-row .mui-input-clear~.mui-icon-clear, .mui-bar .mui-input-row .mui-input-speech~.mui-icon-speech{
+	right: 7px;
+}
+/*搜索框结束*/
+
+
+.mui-content .mui-search{
+	width: 94%;
+	margin: 0 auto;
+}
+.mui-content  input[type=search]{
+	background-color: #FFFFFF;
+	margin: 6px 0;
+	padding-right: 40px;
+	font-size: 14px;
+}
+.mui-content .mui-input-row .mui-input-speech~.mui-icon-speech {
+    top: 7px;
+    /*right: 12px;*/
+    height: auto;
+}
+.homeserch.mui-search.mui-active:before{
+	top: 66%;
+}
+
+a.mui-action-back span{
+	font-size: 16px;
+	margin-left: -3px;
+	float: right;
+    height: 24px;
+    line-height: 28px;
+}
+ .main input[type=text]{
+	padding-left: 35px;
+    font-size: 14px;
+    border: 0px;
+    padding-right: 30px;
+}
+.search_input .img {
+    width: 20%;
+    height: 34px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 2%;
+    position: relative;
+}
+.search_input .img button {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #008DF3;
+    border-radius: 0px;
+    border: 0;
+    color: #FFF;
+}
+.search_input .mui-input-row {
+    width: 75%;
+    clear: none;
+    overflow: hidden;
+    float: left;
+    margin-left: 3%;
+}
+.search_input {
+    background: #f6f6f6;
+    overflow: hidden;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.search_input input[type=text] {
+    height: 34px;
+    color: #999;
+    font-size: 15px;
+    padding-left: 34px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    border: none;
+    padding-right: 30px;
+    /* margin-left: 3%; */
+    padding-left: 30px;
+}
+.search_input .mui-input-row .mui-input-speech~.mui-icon-speech {
+    left: -5px;
+    top: 10px;
+    color: #008DF3;
+}
